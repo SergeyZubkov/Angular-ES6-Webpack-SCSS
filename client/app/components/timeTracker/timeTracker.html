@@ -1,9 +1,5 @@
-<h1>{{$ctrl.name}}</h1>
-<top-pannel></top-pannel>
-<ul class="project-list">
-	<li ng-repeat="project in $ctrl.projects">
-		<div class="project-list___project-title">{{project.title}}</div>
-		<timer value='project.value'></timer>
-	</li>
-</ul>
-
+<div class="container">
+	<h1>{{$ctrl.name}}</h1>
+	<top-panel></top-panel>
+	<project-list projects='$ctrl.projects'></project-list>
+</div>

@@ -1,3 +1,21 @@
-.topPanel {
-  color: red;
+.top-panel {
+  padding: 20px 0;
+  background: #f9f9f9;
+  input {
+  	height: 40px;
+  	width: 62%;
+  	border: 1px solid #ddd;
+  	border-radius: 5px;
+  	padding: 15px;
+  	font-size: 26px;
+  }
+  input[type=number] {
+  	width: 15%;
+  }
+  .btn.btn-primary {
+  	height: 40px;
+  	width: 20%;
+  	background: #2178C7;
+  	font-size: 18px;
+  }
 }

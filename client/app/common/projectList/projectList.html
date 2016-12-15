@@ -1,3 +1,13 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
-</div>
+<ul class="project-list list-group">
+	<li ng-repeat="project in $ctrl.projects" class='list-group-item'>
+		<div class="float-left">
+			<div class="project-list___project-title">{{project.title}}</div>
+		</div>
+		<div class="pull-right">
+			<div class="pull-list__project-rate">{{project.rate}}</div>
+			<timer value='project.timeSpent'></timer>
+		</div>
+	</li>
+</ul>
+
+

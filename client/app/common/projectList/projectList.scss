@@ -1,3 +1,12 @@
-.projectList {
-  color: red;
+.project-list {
+  list-style: none;
+}
+
+
+.list-group-item {
+	font-size: 20px;
+	overflow: hidden;
+	&  div {
+		display: inline-block;
+	}
 }

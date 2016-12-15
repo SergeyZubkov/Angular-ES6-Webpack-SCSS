@@ -1,10 +1,11 @@
 class TopPanelController {
-  constructor() {
-    // "ngInject";
-    // this.projectsService = projectService;
+  constructor(projectsService) {
+    "ngInject";
+    this.projectsService = projectsService;
   }
   create(project) {
-  	console.log(project)
+  	this.projectsService.add(project);
+  	this.title = this.rate = '';
   }
 }
 

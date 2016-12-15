@@ -4,7 +4,9 @@ import './projectList.scss';
 
 let projectListComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+  	projects: '='
+  },
   template,
   controller
 };

@@ -1,9 +1,8 @@
 class TimeTrackerController {
-  constructor() {
+  constructor(projectsService) {
+  	"ngInject";
     this.name = 'timeTracker';
-    this.projects = [{
-    	title: 'Angular', value: 0},
-    	{title: 'React', value: 2000}]
+    this.projects = projectsService.getAll();
   }
 }
 

@@ -6,10 +6,10 @@ export default class projectsService {
   constructor() {
     this.projects = this.projects = [
     {
-      title: 'Angular', timeSpent: 0
+      title: 'Angular', timeSpent: 0, rate: 20
     },
     {
-      title: 'React', timeSpent: 2000
+      title: 'React', timeSpent: 2000, rate: 15
     }]
   }
 

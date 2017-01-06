@@ -1,3 +1,11 @@
-.projectItem {
-  color: red;
+project-item {
+  overflow: hidden;
+  .project-rate_text, 
+  .project-time-spent_text {
+	font-size: 13px;
+	color: #999;
+  }
+  .project-rate_format {
+  	font-size: 14px;			
+  }
 }

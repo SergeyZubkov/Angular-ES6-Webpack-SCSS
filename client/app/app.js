@@ -4,12 +4,15 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import AppServices from './services/services';
+import AppFilters from './filters/filters';
+
 
 angular.module('app', [
     uiRouter,
     Common,
     Components,
-    AppServices.name
+    AppServices.name,
+    AppFilters.name
   ])
   .config(($locationProvider) => {
     "ngInject";

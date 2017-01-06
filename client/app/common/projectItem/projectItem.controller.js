@@ -1,5 +1,6 @@
 class ProjectItemController {
-  constructor() {
+  constructor(rateFilter) {
+  	"ngInject"
     this.name = 'projectItem';
   }
 }

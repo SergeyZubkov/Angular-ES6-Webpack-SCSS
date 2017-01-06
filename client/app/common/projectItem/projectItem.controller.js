@@ -3,6 +3,9 @@ class ProjectItemController {
   	"ngInject"
     this.name = 'projectItem';
   }
+  totalCost() {
+  	return this.data.timeSpent * this.data.rate
+  }
 }
 
 export default ProjectItemController;

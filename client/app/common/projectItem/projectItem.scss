@@ -1,11 +1,25 @@
 project-item {
-  overflow: hidden;
-  .project-rate_text, 
-  .project-time-spent_text {
-	font-size: 13px;
-	color: #999;
-  }
-  .project-rate_format {
-  	font-size: 14px;			
-  }
+	overflow: hidden;
+	.pull-right {
+		color: #999;
+		font-size: 16px;
+		& > div {
+			margin-right: 10px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	.project	{
+		&-rate_format,
+		&-total-cost_currency {
+			font-size: 13px;
+		}
+		&-total-cost_value {	
+			color: #000;	
+		}
+		&-total-cost_currency {
+			color: #333;
+		}
+	}
 }

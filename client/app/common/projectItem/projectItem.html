@@ -4,17 +4,21 @@
 </div>
 <div class="pull-right">
 	<div class="project-rate">
-		<span class="project-rate_text">ставка</span>
 		<span class="project-rate_value">{{$ctrl.data.rate }}</span>
-		<span class="project-rate_format">руб./час </span>
+		<span class="project-rate_format"><i class="fa fa-rub"></i>/час</span>
 	</div>
 	<div class="project-time-spent">
-		<span class="project-time-spent_text">
-			затраченно
-		</span>
 		<span class="project-time-spent_value">
 			{{$ctrl.data.timeSpent}}
 		</span>
 	</div>
-	<timer value='project.timeSpent'></timer>
+	<div class="project-total-cost">
+		<span class="project-total-cost_value">
+			{{$ctrl.totalCost()}}
+		</span>
+		<span class="project-total-cost_currency">
+			<i class="fa fa-rub"></i>
+		</span>
+	</div>
+	<!-- <timer value='project.timeSpent'></timer> -->
 </div>

@@ -1,11 +1,15 @@
 class TopPanelController {
-  constructor(projectsService) {
+  constructor(projectsService, $log, $timeout) {
     "ngInject";
     this.projectsService = projectsService;
+   	$timeout(() => $log.info(this.createProjectTrackerForm))
   }
   create(project) {
-  	this.projectsService.add(project);
-  	this.title = this.rate = '';
+  	if(this.createProjectTrackerForm.$valid) {
+  		this.projectsService.add(project);
+  		this.title = this.rate = '';
+  		this.createProjectTrackerForm.$submitted = false;
+  	}
   }
 }
 

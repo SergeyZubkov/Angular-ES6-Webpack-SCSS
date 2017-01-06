@@ -4,9 +4,13 @@
 export default class projectsService {
 
   constructor() {
-    this.projects = this.projects = [{
-      title: 'Angular', timeSpent: 0},
-      {title: 'React', timeSpent: 2000}]
+    this.projects = this.projects = [
+    {
+      title: 'Angular', timeSpent: 0
+    },
+    {
+      title: 'React', timeSpent: 2000
+    }]
   }
 
   getAll() {
@@ -22,7 +26,7 @@ export default class projectsService {
 class Project {
 
   constructor(data) {
-    this.title =data.title;
+    this.title = data.title;
     this.rate = data.rate;
     this.timeSpent = 0;
   }

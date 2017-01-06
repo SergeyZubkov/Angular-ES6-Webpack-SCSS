@@ -1,5 +1,11 @@
 <div class="container">
 	<h1>{{$ctrl.name}}</h1>
+</div>
 	<top-panel></top-panel>
-	<project-list projects='$ctrl.projects'></project-list>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<project-list projects='$ctrl.projects'></project-list>
+		</div>
+	</div>
 </div>

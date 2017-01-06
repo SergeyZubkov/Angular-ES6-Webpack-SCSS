@@ -1,3 +1,8 @@
-<div>
-  <h1>{{ $ctrl.name }}</h1>
+<div class="float-left">
+<div class="project-list___project-title">{{$ctrl.data.title}}</div>
+</div>
+<div class="pull-right">
+	<div class="pull-list__project-rate">{{$ctrl.data.rate}}</div>
+	<div class="pull-list__project-rate">{{$ctrl.data.timeSpent}}</div>
+	<timer value='project.timeSpent'></timer>
 </div>

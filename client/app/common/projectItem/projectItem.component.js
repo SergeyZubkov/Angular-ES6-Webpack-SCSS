@@ -4,7 +4,9 @@ import './projectItem.scss';
 
 let projectItemComponent = {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+  	data: '='
+  },
   template,
   controller
 };

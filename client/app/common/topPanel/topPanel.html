@@ -1,11 +1,17 @@
 
 <div class="top-panel panel panel-default">
-	<div class="row">
-	<div class="col-md-8 col-md-offset-2">
-			<input ng-model='$ctrl.title' type="text" class="project-title-input">
-			<input type="number" min='0' max='1000' ng-model="$ctrl.rate" class="project-rate-input">
-			<span ng-click="$ctrl.create({ title: $ctrl.title, rate: $ctrl.rate})" class="btn btn-primary create-project" >Создать</span>
+	<form ng-submit="$ctrl.create({ title: $ctrl.title, rate: $ctrl.rate})" name='$ctrl.createProjectTrackerForm' novalidate>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<input name='title' ng-model='$ctrl.title' ng-class="{ 'has-error': $ctrl.createProjectTrackerForm.title.$invalid&&$ctrl.createProjectTrackerForm.$submitted }" type="text" class="project-title-input" placeholder="название проекта" required>
+				</div>
+				<div class="col-md-2">
+					<input name="rate" type="number" min='0' max='1000' ng-model="$ctrl.rate" ng-class="{ 'has-error': $ctrl.createProjectTrackerForm.rate.$invalid&&$ctrl.createProjectTrackerForm.$submitted }" class="project-rate-input" placeholder="руб./час" required>
+				</div>
+				<div class="col-md-2"><input type='submit' class="btn btn-primary create-project" value='Создать'></div>
+			</div>
 		</div>
-	</div>
+	</form>
 </div>
 

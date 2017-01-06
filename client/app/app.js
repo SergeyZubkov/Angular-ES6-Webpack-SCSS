@@ -5,8 +5,6 @@ import Components from './components/components';
 import AppComponent from './app.component';
 import AppServices from './services/services';
 
-import 'normalize.css';
-
 angular.module('app', [
     uiRouter,
     Common,

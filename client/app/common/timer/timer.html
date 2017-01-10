@@ -1,2 +1,9 @@
-<span class="timer-indecation">{{$ctrl.value}}</span>
-<span class="ctimer-btn" ng-class="{active: $ctrl.on}"></span>
+<span class="timer-indecation">{{$ctrl.getFormattedValue()}}</span>
+<i class="fa fa-play" 
+	ng-disabled='$ctrl.disabled'
+	ng-if="!$ctrl.timerOn" 
+	ng-click='$ctrl.start()'></i>
+<i class="fa fa-pause" 
+	ng-disabled="$ctrl.disabled"
+	ng-if="$ctrl.timerOn" 
+	ng-click='$ctrl.pause()'></i>

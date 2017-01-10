@@ -5,6 +5,8 @@ import Components from './components/components';
 import AppComponent from './app.component';
 import AppServices from './services/services';
 import AppFilters from './filters/filters';
+import Directives from './directives/directives';
+import angularLocalStorage from 'angular-local-storage'
 
 
 angular.module('app', [
@@ -12,7 +14,9 @@ angular.module('app', [
     Common,
     Components,
     AppServices.name,
-    AppFilters.name
+    AppFilters.name,
+    Directives,
+    angularLocalStorage
   ])
   .config(($locationProvider) => {
     "ngInject";
@@ -20,5 +24,9 @@ angular.module('app', [
     // #how-to-configure-your-server-to-work-with-html5mode
     $locationProvider.html5Mode(true).hashPrefix('!');
   })
-
+  .config((localStorageServiceProvider) => {
+    "ngInject"
+    localStorageServiceProvider
+      .setPrefix('projectTracker');
+  })
   .component('app', AppComponent);

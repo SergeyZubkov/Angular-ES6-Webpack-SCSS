@@ -1,11 +1,18 @@
 <div class="container">
 	<h1>{{$ctrl.name}}</h1>
 </div>
-	<top-panel></top-panel>
+<top-panel></top-panel>
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
-			<project-list projects='$ctrl.projects'></project-list>
+			<ul class="project-list list-group">
+				 <project-item  class='list-group-item'	
+				 ng-class='{disabled: $ctrl.activeItem != "all"&&$ctrl.activeItem != project.id}' ng-repeat="project in $ctrl.projects" 
+				 project-data='project' 
+				 is-active='$ctrl.activeItem == "all"||$ctrl.activeItem == project.id'
+				 on-selected='$ctrl.deselectItemsWithout(id)'
+				 on-deselect='$ctrl.activeItem="all"'></project-item>
+			</ul>
 		</div>
 	</div>
 </div>

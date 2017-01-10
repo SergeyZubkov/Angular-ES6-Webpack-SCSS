@@ -5,7 +5,10 @@ import './projectItem.scss';
 let projectItemComponent = {
   restrict: 'E',
   bindings: {
-  	data: '='
+  	projectData: '=',
+  	isActive: '<',
+  	onSelected: '&',
+  	onDeselect: '&'
   },
   template,
   controller

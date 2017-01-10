@@ -5,7 +5,11 @@ import './timer.scss';
 let timerComponent = {
   restrict: 'E',
   bindings: {
-  	value: '<'
+  	value: '<',
+  	disabled: '<',
+  	onStart: '&',
+  	onPause: '&',
+  	onTick: '&'
   },
   template,
   controller

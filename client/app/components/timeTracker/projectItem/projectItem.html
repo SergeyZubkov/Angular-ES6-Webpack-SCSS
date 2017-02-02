@@ -1,0 +1,81 @@
+<div ng-if="!$ctrl.isEdit">
+	<div class="float-left">
+		<i class="fa fa-ellipsis-v app-dropdown" app-dropdown>
+			<ul class="app-dropdown-menu" app-dropdown-menu>
+				<li ng-click='$ctrl.delete()'>Удалить</li>
+				<li ng-click='$ctrl.edit()'>Изменить</li>
+				<li ng-click='$ctrl.finish()'
+					ng-if='!$ctrl.project.complite'>Завершить
+				</li>
+				<li ng-click='$ctrl.reopen()'
+					ng-if='$ctrl.project.complite'>Возобновить
+				</li>
+			</ul>
+		</i>
+		<div class="project-title">
+			{{$ctrl.project.title}}
+		</div>
+	</div>
+	<div class="pull-right">
+		<div class="project-rate">
+			<span class="project-rate_value">{{$ctrl.project.rate }}</span>
+			<span class="project-rate_format"><i class="fa fa-rub"></i>/час</span>
+		</div>
+		<div class="project-time-spent">
+			<timer value='$ctrl.project.timeSpent' 
+			work='$ctrl.workTimer'
+			disabled='!$ctrl.isActive||$ctrl.project.complite' 
+			on-start='$ctrl.onSelected({id: $ctrl.project.id})' 
+			on-pause='$ctrl.onDeselect()'
+			on-tick='$ctrl.setTimeSpent(value)'></timer>
+		</div>
+		<div class="project-total-cost">
+			<span class="project-total-cost_value">
+				{{$ctrl.project.getSum()}}
+			</span>
+			<span class="project-total-cost_currency">
+				<i class="fa fa-rub"></i>
+			</span>
+		</div>
+	</div>
+</div>
+<div ng-if="$ctrl.isEdit">
+	<div class="float-left">
+		<div class="edit-actions">
+			<i class="fa fa-check-square" ng-click="$ctrl.saveChanges()"></i>
+			<i class="fa fa-ban" ng-click="$ctrl.cancel()"></i>
+		</div>
+		<div class="project-title project-title_edit"
+			ng-if='$ctrl.isEdit'>
+			<input class="project-title_input"
+				ng-model='$ctrl.newData.title'
+				ng-disabled='!$ctrl.isActive'
+				autofocus>
+		</div>
+	</div>
+	<div class="pull-right">
+		<div class="project-rate project-rate_edit"
+			ng-if='$ctrl.isEdit'>
+			<input type="number" min='0' max='9000' class="project-rate_input"
+				ng-model='$ctrl.newData.rate'
+				ng-disabled='!$ctrl.isActive'>
+		</div>
+		<div class="project-time-spent_edit"
+			ng-if='$ctrl.isEdit'>
+			<input type="number" min='0' class="project-timte-spent_hours-input"
+				ng-model='$ctrl.newData.timeSpent.hours'
+				ng-disabled='!$ctrl.isActive'>
+			<input type="number" min='0' class="project-timte-spent_minuts-input"
+				ng-model='$ctrl.newData.timeSpent.minutes'
+				ng-disabled='!$ctrl.isActive'>
+		</div>
+		<div class="project-total-cost">
+			<span class="project-total-cost_value">
+				{{$ctrl.project.getSum()}}
+			</span>
+			<span class="project-total-cost_currency">
+				<i class="fa fa-rub"></i>
+			</span>
+		</div>
+	</div>
+</div>

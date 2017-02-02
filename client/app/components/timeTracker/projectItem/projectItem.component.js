@@ -5,7 +5,7 @@ import './projectItem.scss';
 let projectItemComponent = {
   restrict: 'E',
   bindings: {
-  	projectData: '=',
+  	project: '=',
   	isActive: '<',
   	onSelected: '&',
   	onDeselect: '&'

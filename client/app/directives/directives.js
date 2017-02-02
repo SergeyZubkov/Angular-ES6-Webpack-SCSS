@@ -1,12 +1,12 @@
 import angular from 'angular';
 
-import dropdown from './dropdown';
+import dropdown from './dropdown/dropdown';
 
 let directivesModule = angular
-  .module('app.directives', [])
-  .directive({
-    dropdown
-  })
+  .module('app.directives', [
+  		dropdown
+  ])
+
 
   .name;
 

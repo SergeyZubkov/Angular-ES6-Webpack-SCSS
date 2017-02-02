@@ -4,15 +4,22 @@
   height: 6.5rem;
   background-color: $primaryColor;
   padding: 1rem;
-
+  border-radius: 0px;
   .nav-links,
   .logo {
     display: inline-block;
   }
 
   .logo {
-    color: $lightTextColor;
-    margin-right: 50%;
+    h1, a{
+      color: $lightTextColor;
+      font-size: 24px;
+      i {
+        opacity: 0.6;
+        display: inline-block;
+        border-bottom: 1px dotted $lightTextColor;
+      }
+    }
   }
 
   .nav-links span {

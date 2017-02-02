@@ -1,0 +1,25 @@
+project-form {
+  .top-panel {
+    padding: 20px 0;
+    background: #f9f9f9;
+    input {
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      font-size: 18px;
+      width: 100%;
+      &.has-error {
+        border-color: red;
+      }
+    }
+    .btn.btn-primary {
+      height: 40px;
+      padding: 0;
+      background: #2178C7;
+      font-size: 18px;
+      width: 100%;
+    }
+  }
+
+}

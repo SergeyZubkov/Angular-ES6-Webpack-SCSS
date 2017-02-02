@@ -1,0 +1,61 @@
+project-item {
+	overflow: visible !important;
+	> div {
+		display: block !important;
+	}
+	.pull-right {
+		color: #999;
+		font-size: 16px;
+		& > div {
+			margin-right: 10px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		input {
+			width: 100%;
+		}
+	}
+	.project	{
+		&-title {
+			&_edit {
+				width: 200px;
+			}
+		}
+		&-rate {
+			&_edit {
+				width: 50px;
+			}
+		}
+		&-time-spent {
+			&_edit {
+				width: 100px;
+				input {
+					width: 48%;
+				}
+			}
+		}
+		&-rate_format,
+		&-total-cost_currency {
+			font-size: 13px;
+		}
+		&-total-cost_value {	
+			color: #000;	
+		}
+		&-total-cost_currency {
+			color: #333;
+		}
+	}
+	.edit-actions {
+		margin-right: 10px;
+		.fa {
+			cursor: pointer;
+		}
+		.fa.fa-check-square {
+			color: #2178C7;
+		}
+		.fa.fa-ban {
+			color: #ef4040;
+		}
+	}
+}

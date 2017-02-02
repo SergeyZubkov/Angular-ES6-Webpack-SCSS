@@ -1,17 +1,29 @@
-<div class="container">
-	<h1>{{$ctrl.name}}</h1>
-</div>
-<top-panel></top-panel>
+<project-form></project-form>
 <div class="container">
 	<div class="row">
 		<div class="col-md-8">
+			<div class="filter-options">
+				<span class="filter-option-current"
+					ng-click='$ctrl.projects.filterBy("current")'
+					ng-class='{active: $ctrl.projects.filterState === "current"}'>Текущие</span>
+				<span class="filter-option-complite"
+					ng-click='$ctrl.projects.filterBy("complite")'
+					ng-class='{active: $ctrl.projects.filterState === "complite"}'>Завершенные</span>
+				<span class="filter-option-all"
+					ng-click='$ctrl.projects.filterBy("all")'
+					ng-class="{active: $ctrl.projects.filterState === 'all'}">Все</span>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">
 			<ul class="project-list list-group">
-				 <project-item  class='list-group-item'	
-				 ng-class='{disabled: $ctrl.activeItem != "all"&&$ctrl.activeItem != project.id}' ng-repeat="project in $ctrl.projects" 
-				 project-data='project' 
-				 is-active='$ctrl.activeItem == "all"||$ctrl.activeItem == project.id'
-				 on-selected='$ctrl.deselectItemsWithout(id)'
-				 on-deselect='$ctrl.activeItem="all"'></project-item>
+				<project-item  class='list-group-item'	
+				ng-class='{disabled: $ctrl.activeItem != "all"&&$ctrl.activeItem != project.id}' ng-repeat="project in $ctrl.projects.filteredList" 
+				project='project' 
+				is-active='$ctrl.activeItem == "all"||$ctrl.activeItem == project.id'
+				on-selected='$ctrl.deselectItemsWithout(id)'
+				on-deselect='$ctrl.activeItem = "all"'></project-item>
 			</ul>
 		</div>
 	</div>

@@ -1,16 +1,16 @@
-import TopPanelModule from './topPanel'
-import TopPanelController from './topPanel.controller';
-import TopPanelComponent from './topPanel.component';
-import TopPanelTemplate from './topPanel.html';
+import ProjectFormModule from './ProjectForm'
+import ProjectFormController from './ProjectForm.controller';
+import ProjectFormComponent from './ProjectForm.component';
+import ProjectFormTemplate from './ProjectForm.html';
 
-describe('TopPanel', () => {
+describe('ProjectForm', () => {
   let $rootScope, makeController;
 
-  beforeEach(window.module(TopPanelModule));
+  beforeEach(window.module(ProjectFormModule));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeController = () => {
-      return new TopPanelController();
+      return new ProjectFormController();
     };
   }));
 
@@ -30,20 +30,20 @@ describe('TopPanel', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(TopPanelTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
+      expect(ProjectFormTemplate).to.match(/{{\s?\$ctrl\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
       // component/directive specs
-      let component = TopPanelComponent;
+      let component = ProjectFormComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(TopPanelTemplate);
+        expect(component.template).to.equal(ProjectFormTemplate);
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(TopPanelController);
+        expect(component.controller).to.equal(ProjectFormController);
       });
   });
 });

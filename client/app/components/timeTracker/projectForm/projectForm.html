@@ -1,0 +1,33 @@
+
+<div class="top-panel panel panel-default">
+	<form ng-submit="$ctrl.create({ title: $ctrl.title, rate: $ctrl.rate})" 
+		name='$ctrl.createForm' 
+		novalidate>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<input name='title' 
+						ng-model='$ctrl.title' 
+						ng-class="{ 'has-error': $ctrl.createForm.title.$invalid&&$ctrl.createForm.$submitted }" 
+						type="text" class="project-title-input" 
+						placeholder="название проекта" 
+						autofocus
+						required>
+				</div>
+				<div class="col-md-2">
+					<input name="rate" 
+						type="number" 
+						min='0' 
+						ng-model="$ctrl.rate" 
+						ng-class="{ 'has-error': $ctrl.createForm.rate.$invalid&&$ctrl.createForm.$submitted }" 
+						class="project-rate-input" 
+						placeholder="руб./час" 
+						required>
+				</div>
+				<div class="col-md-2">
+					<input type='submit' class="btn btn-primary create-project" value='Создать'></div>
+			</div>
+		</div>
+	</form>
+</div>
+

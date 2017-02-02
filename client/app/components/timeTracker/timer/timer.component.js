@@ -7,6 +7,7 @@ let timerComponent = {
   bindings: {
   	value: '<',
   	disabled: '<',
+    work: "=",
   	onStart: '&',
   	onPause: '&',
   	onTick: '&'

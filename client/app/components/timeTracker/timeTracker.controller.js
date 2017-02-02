@@ -1,14 +1,14 @@
 class TimeTrackerController {
-  constructor(projectsService, $log) {
+  constructor(projectsService, $log, $scope) {
   	"ngInject";
     this.name = 'Project tracking';
-    this.projects = projectsService.getAll();
-    $log.log(this.projects)
-    this.activeItem = 'all'
+    this.projects = projectsService;
+    $log.log(this.projects);
+    this.activeItem = 'all';
   }
   deselectItemsWithout(id) {
-  	console.log(id)
-  	this.activeItem = id
+  	console.log(id);
+  	this.activeItem = id;
   }
 }
 
